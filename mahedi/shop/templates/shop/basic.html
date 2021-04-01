@@ -1,0 +1,284 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+  <title> Mr.Pharmacy</title>
+  <link rel="shortcut icon" type="image/x-icon" href="{{setting.title_icon.url}}" >
+
+  <style>
+    {% block css %}
+
+    {% endblock %}
+  </style>
+
+
+</head>
+
+<body>
+
+   
+
+
+
+</body>
+
+<div class="container">
+<nav class="navbar navbar-expand-lg navbar-light grey lighten-3 d-block">
+
+  <div class="container">
+
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+      aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse mb-1" id="basicExampleNav">
+
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto text-uppercase font-weight-normal">
+        <li class="nav-item">
+          <div class="header-top-left">
+                        <ul class="phone-wrap">
+                           <b>Telephone Enquiry :</b>   {{setting.phone}}
+                            
+                        </ul>
+                    </div>
+        </li>
+
+        
+      </ul>
+      <!-- Links -->
+      
+      <a class="navbar-brand" href="#!">
+    <img src="{{setting.icon.url}}" height="70" width="250" alt="mdb logo">
+  </a>
+      
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        
+
+        <li class="nav-item">
+          <div style="text-align:center;padding:0em 0;"> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=small&timezone=Asia%2FDhaka" width="100%" height="90" frameborder="0" seamless></iframe> </div></a>
+        </li>
+      </ul>
+
+    </div>
+
+  
+  
+
+
+
+</nav>
+</div>
+<div>
+            {%if messages %} {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}" role="alert">
+                {{message}}
+            </div>
+            {% endfor %} {% endif %}
+        </div>
+      
+      <nav class="navbar navbar-expand-lg navbar-light grey lighten-3">
+
+  <div class="container">
+ 
+    
+
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+      aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+
+      
+      
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item">
+          
+        </li>
+        
+      </ul>
+
+    </div>
+    <!-- Collapsible content -->
+
+  </div>
+
+</nav>
+      
+    
+
+  
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-secondary d-block" style="     background-color: #000000!important;">
+
+  <div class="container">
+
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+      aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse mb-1" id="basicExampleNav">
+
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto text-uppercase font-weight-normal">
+      
+      
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+
+    
+
+        
+      </ul>
+
+    </div>
+    <!-- Collapsible content -->
+
+  </div>
+  
+  <hr class="w-100 mt-2 " style="background-color: #ffbf00!important;">
+  
+  <div class="container pb-2">
+
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav1"
+      aria-controls="basicExampleNav1" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse pt-1" id="basicExampleNav1">
+
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item avatar dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <img src="{{ setting.user.url }}" class="rounded-circle z-depth-0"
+            alt="avatar image" height="35">
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
+          aria-labelledby="navbarDropdownMenuLink-55">
+          {% if user.id is not None %}
+
+
+
+          <a class="dropdown-item" href="{%url 'user_profile'%}">Hi {{request.user.username}}</a>
+          <a class="dropdown-item" href="{%url 'user_logout'%}">Log Out</a>
+          {% else %}
+          <a class="dropdown-item" href="{%url 'user_login'%}">Login</a>
+          <a class="dropdown-item" href="{%url 'user_register'%}">Register</a>
+          {%endif%}
+
+
+        </div>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link text-light font-weight-bold" href="/shop">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light font-weight-bold" href="/shop/about">About Us</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link text-light font-weight-bold" href="/shop/tracker">Tracker</a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link text-light font-weight-bold" href="/blog">Blog</a>
+      </li>
+
+       <li class="nav-item">
+        <a class="nav-link text-light font-weight-bold" href="/shop/contact">Contact Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light font-weight-bold" href="/shop/checkout">Checkout</a>
+      </li>
+      
+
+
+    </ul>
+      <!-- Links -->
+      
+      <ul class="nav navbar-nav nav-flex-icons ml-auto">
+
+        <form method="get" action="/shop/search/" class="form-inline my-2 my-lg-0">
+      
+        <input class="form-control mr-sm-2" type="search" placeholder=" Search " aria-label="Search" name="search"
+          id="search">
+
+        <button class="btn  btn-success my-2 my-sm-0" type="submit"> <i class="fas fa-search text-white mx-3"></i></button>
+
+      </form>
+
+        <button type="button" class="btn btn-danger mx-2" id="popcart" data-container="body" data-toggle="popover"
+        data-placement="bottom" data-html="true" data-content="Vivamus
+sagittis lacus vel augue laoreet rutrum faucibus.">
+           <i class="fas fa-shopping-cart pl-0"></i>
+
+        <span id="cart" class="badge badge-pill red">0</span>
+      </button>
+
+        
+
+
+      </ul>
+
+
+    </div>
+    <!-- Collapsible content -->
+
+  </div>
+
+</nav>
+
+
+</br>
+</br>
+</br>
+
+
+
+
+
+  {% block body %} 
+
+
+  {% endblock %}
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+  {% block js %} {% endblock %}
+</body>
+
+</html>

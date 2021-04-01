@@ -1,0 +1,99 @@
+{% extends 'blog/basic.html' %}
+
+{% block body %}
+
+<div class="container mt-5">
+
+
+   <!--Section: Content-->
+              <section class="text-justify">
+                
+               <h3 class="font-italic">
+                {{post.title}}
+            </h3>
+          
+                    <figure class="figure">
+                      <img src="/media/{{post.thumbnail}}" class="figure-img img-fluid z-depth-1"
+                        alt="...">
+                      
+                    </figure>
+          
+          
+                    <p class="blog-post-meta">{{post.pub_date}}</br><hr></br>  <a href="#">{{post.author}}</a></p>
+          
+                    <hr>
+          
+                    <p class="my-4 font-weight-bold"></p>
+          
+                    <p>{{post.blog}}</p>
+
+          
+                    
+          
+              </section>
+              <hr>
+          </br>
+              <!--Section: Content-->
+
+
+  </div>
+  <footer class="page-footer font-small cyan darken-3" style="     background-color: #000000!important;">
+ 
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-12 py-5">
+        <div class="mb-5 flex-center">
+
+          <!-- Facebook -->
+          <a class="fb-ic text-light">
+            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic text-light">
+            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic text-light">
+            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic text-light">
+            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic text-light">
+            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          
+          <a class="navbar-brand" href="#!">
+    <img src="{{setting.icon.url}}" height="70" width="250" alt="mdb logo">
+  </a>
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+
+    <!-- Grid row-->
+
+
+  </div>
+  <hr class="w-100 mt-2 " style="background-color: #ffbf00!important;">
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3 text-light">© 2020 Copyright:
+    <a href="" class=" text-muted"> mahedihassan8855@gmail.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+
+
+{% endblock %}

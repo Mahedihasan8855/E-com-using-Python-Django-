@@ -1,0 +1,129 @@
+{% extends 'blog/basic.html' %}
+
+{% block body %}
+
+<h1 class="font-weight-bold text-center mb-4">Blog Of Mr. Pharmacy</h1>
+
+
+<hr class="w-header my-4">
+
+<div class="container mt-5">
+
+{% for item in myposts %}
+  <!--Section: Content-->
+  <section class="dark-grey-text">
+
+    
+
+    <!-- Grid row -->
+    <div class="row align-items-center">
+
+      <!-- Grid column -->
+      <div class="col-lg-5">
+
+        <!-- Featured image -->
+        <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4">
+          <img class="img-fluid" src="/media/{{item.thumbnail}}" alt="Sample image" >
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-lg-7">
+
+        <!-- Category -->
+        <a href="#!" class="green-text">
+          <h6 class="font-weight-bold mb-3"><i class="fas fa-stethoscope"></i>  Blog</h6>
+        </a>
+        <!-- Post title -->
+        <h4 class="font-weight-bold mb-3"><strong>{{item.title}}</strong></h4>
+        <!-- Excerpt -->
+        <p>{{item.blog|slice:"0:300"}}....</p>
+        <!-- Post data -->
+        <p>by <a><strong></strong></a>, {{item.pub_date}}</p>
+        <!-- Read more button -->
+        <a class="btn btn-success btn-md btn-rounded mx-0" href="blogpost/{{item.post_id}}">Read more</a>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+    <hr class="my-5">
+    
+  </section>
+  <!--Section: Content-->
+{% if forloop.counter|divisibleby:2 %}
+
+</div>
+
+<div class="container mt-5">
+    {% endif %}
+
+    {% endfor %}
+
+</div>
+<footer class="page-footer font-small cyan darken-3" style="     background-color: #000000!important;">
+ 
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-12 py-5">
+        <div class="mb-5 flex-center">
+
+          <!-- Facebook -->
+          <a class="fb-ic text-light">
+            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic text-light">
+            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic text-light">
+            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic text-light">
+            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic text-light">
+            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          
+          <a class="navbar-brand" href="#!">
+    <img src="{{setting.icon.url}}" height="70" width="250" alt="mdb logo">
+  </a>
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+
+    <!-- Grid row-->
+
+
+  </div>
+  <hr class="w-100 mt-2 " style="background-color: #ffbf00!important;">
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3 text-light">© 2020 Copyright:
+    <a href="" class=" text-muted"> mahedihassan8855@gmail.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+
+{% endblock %}

@@ -1,0 +1,211 @@
+{% extends 'shop/basic.html' %}
+
+{% block title%} Contact Us - Mahedi's shop{% endblock %}
+{% block body %}
+
+</div>
+<div class="container mt-5">
+
+ 
+    <!--Section: Content-->
+    <section class="dark-grey-text mb-5">
+      
+      <style>
+        .map-container-section {
+          overflow:hidden;
+          padding-bottom:56.25%;
+          position:relative;
+          height:0;
+        }
+        .map-container-section iframe {
+          left:0;
+          top:0;
+          height:100%;
+          width:100%;
+          position:absolute;
+        }
+      </style>
+
+      <!-- Section heading -->
+      <h1 class="font-weight-bold text-center mb-4">Contact Us </h1>
+      
+
+        <hr class="w-header my-4">
+
+      <p class="text-center w-responsive mx-auto pb-5">“Medicine is not a science; it is empiricism founded on a network of blunders.”</p>
+
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-lg-5 mb-lg-0 pb-lg-3 mb-4">
+
+          <!-- Form with header -->
+          <div class="card">
+            <div class="card-body">
+              <!-- Header -->
+              <div class="form-header form-info">
+                <h3 class="mt-2"><i class="fas fa-envelope" style="font-size:48px;color:red"></i> Write to us:</h3>
+              </div>
+              <p class="dark-grey-text">We'll write rarely, but only the best content.</p>
+              <!-- Body -->
+              <form action="/shop/contact/" method="post">{% csrf_token %}
+              <div class="md-form">
+                <i class="fas fa-user prefix grey-text"></i>
+
+              <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name='name' placeholder="Enter Your Name">
+
+              </div>
+              <div class="md-form">
+                <i class="fas fa-envelope prefix grey-text"></i>
+
+                <label for="name">Email</label>
+    <input type="email" class="form-control" id="email" name='email' placeholder="Enter Your Email">
+              </div>
+              <div class="md-form">
+                <i class="fas fa-phone prefix grey-text"></i>
+
+                <label for="name">Phone</label>
+    <input type="tel" class="form-control" id="phone" name='phone' placeholder="Enter Your Phone Number">
+              </div>
+
+              <div class="md-form">
+                <i class="fas fa-pencil-alt prefix grey-text"></i>
+
+               <label for="desc">How May We Help You?</label>
+    <textarea class="form-control" id="desc" name='desc' rows="3"placeholder="Tell us what you want to say"></textarea>
+              </div>
+            </br>
+              <div class="text-center">
+                <button class="btn btn-floating btn-info" type="submit">Submit</button>
+              </div>
+            </form>
+            </div>
+          </div>
+          <!-- Form with header -->
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-lg-7">
+
+          <!--Google map-->
+          <div id="map-container-section" class="z-depth-1-half map-container-section mb-4" style="height: 400px">
+           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d913.2660908951356!2d90.43471792646257!3d23.709395467810335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b9cc7d566d03%3A0x2472a49ac0504cd2!2sJatra%20Bari%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1607551120123!5m2!1sen!2sbd" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+          </div>
+          <!-- Buttons-->
+          <div class="row text-center">
+            <div class="col-md-4">
+              <a class="btn btn-floating btn-primary">
+                <i class="fas fa-map-marker-alt"></i>
+              </a>
+              <p>{{setting.address}}</p>
+              
+            </div>
+            <div class="col-md-4">
+              <a class="btn btn-floating btn-primary">
+                <i class="fas fa-phone"></i>
+              </a>
+              <p>{{setting.phone}}</p>
+            </div>
+            <div class="col-md-4">
+              <a class="btn btn-floating btn-primary">
+                <i class="fas fa-envelope"></i>
+              </a>
+              <p>{{setting.email}}</p>
+            </div>
+          </div>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </section>
+    <!--Section: Content-->
+
+
+  </div>
+
+
+
+
+
+<footer class="page-footer font-small cyan darken-3" style="     background-color: #000000!important;">
+ 
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-12 py-5">
+        <div class="mb-5 flex-center">
+
+          <!-- Facebook -->
+          <a class="fb-ic text-light">
+            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic text-light">
+            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic text-light">
+            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic text-light">
+            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic text-light">
+            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          
+          <a class="navbar-brand" href="#!">
+    <img src="{{setting.icon.url}}" height="90" width="300" alt="mdb logo">
+  </a>
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+
+    <!-- Grid row-->
+
+
+  </div>
+  <hr class="w-100 mt-2 " style="background-color: #ffbf00!important;">
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3 text-light">© 2020 Copyright:
+    <a href="" class=" text-muted"> mahedihassan8855@gmail.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+
+
+
+
+
+
+
+{% endblock %}
+{% block js %}
+<script type="text/javascript">
+{% if thank %}
+
+alert('Thanks for contacting with us. We will response to you very soon');
+
+document.location = "/shop/contact";
+{% endif %}
+</script>
+{% endblock %}

@@ -1,0 +1,233 @@
+
+{% extends 'shop/basic.html' %}
+
+{% block title%} {{product.product_name}} - My Awesome Cart{% endblock %}
+{% block body %}
+
+
+
+
+
+
+<h1 class="font-weight-bold text-center mb-4">Product Details</h1>
+
+
+<hr class="w-header my-4">
+
+
+<div class="container my-5 py-5 z-depth-1">
+
+
+  <!--Section: Content-->
+  <section class="text-center">
+
+   
+
+    <div class="row">
+
+      <div class="col-lg-6">
+
+        <!--Carousel Wrapper-->
+        <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
+
+          <!--Slides-->
+          <div class="carousel-inner text-center text-md-left" role="listbox">
+            <div class="carousel-item active">
+              <img src="/media/{{product.image}}"
+                alt="First slide" class="img-fluid">
+            </div>
+            
+          </div>
+          
+
+        </div>
+        <!--/.Carousel Wrapper-->
+
+      </div>
+
+      <div class="col-lg-5 text-center text-md-left">
+
+        <h2 class="h2-responsive text-center text-md-left product-name font-weight-bold dark-grey-text mb-1 ml-xl-0 ml-4">
+          <strong>{{product.product_name}}</strong>
+        </h2>
+        <span class="badge badge-danger product mb-4 ml-xl-0 ml-4">{{product.category}}</span>
+        <h3 class="h3-responsive text-center text-md-left mb-5 ml-xl-0 ml-4">
+          <span class="red-text font-weight-bold">
+            <strong> ৳{{product.price}}</strong>
+          </span>
+          
+        </h3>
+
+        <!--Accordion wrapper-->
+        <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+          <!-- Accordion card -->
+          <div class="card">
+
+            <!-- Card header -->
+            <div class="card-header" role="tab" id="headingOne1">
+              <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
+                aria-controls="collapseOne1">
+                <h5 class="mb-0">
+                  Description
+                  <i class="fas fa-angle-down rotate-icon"></i>
+                </h5>
+              </a>
+            </div>
+
+            <!-- Card body -->
+            <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
+              data-parent="#accordionEx">
+              <div class="card-body">
+                {{product.desc}}
+            </div>
+          </div>
+          <!-- Accordion card -->
+
+          <!-- Accordion card -->
+          
+
+            <!-- Card body -->
+            
+          </div>
+          <!-- Accordion card -->
+
+          <!-- Accordion card -->
+          <div class="card">
+
+            
+          <!-- Accordion card -->
+
+        </div>
+        <!--/.Accordion wrapper-->
+
+        <!-- Add to Cart -->
+        <section class="color">
+          
+   
+            <div class="row mt-3">
+              <div class="col-md-12 text-center text-md-left text-md-right">
+                <button class="btn btn-primary btn-rounded">
+                  <i class="fas fa-cart-plus mr-2" aria-hidden="true"></i> Add to cart</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        
+
+      </div>
+
+    </div>
+
+  </section>
+  <!--Section: Content-->
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<footer class="page-footer font-small cyan darken-3" style="     background-color: #000000!important;">
+ 
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-12 py-5">
+        <div class="mb-5 flex-center">
+
+          <!-- Facebook -->
+          <a class="fb-ic text-light">
+            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic text-light">
+            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic text-light">
+            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic text-light">
+            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic text-light">
+            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          
+          <a class="navbar-brand" href="#!">
+    <img src="{{setting.icon.url}}" height="70" width="250" alt="mdb logo">
+  </a>
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+
+    <!-- Grid row-->
+
+
+  </div>
+  <hr class="w-100 mt-2 " style="background-color: #ffbf00!important;">
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3 text-light">© 2020 Copyright:
+    <a href="" class=" text-muted"> mahedihassan8855@gmail.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+
+
+
+
+{% endblock %}
+
+
+
+
+{% block js %}
+<script>
+console.log('working');
+if(localStorage.getItem('cart') == null){
+var cart = {};
+}
+else
+{
+cart = JSON.parse(localStorage.getItem('cart'));
+document.getElementById('cart').innerHTML = Object.keys(cart).length;
+}
+$('.cart').click(function(){
+console.log('clicked');
+var idstr = this.id.toString();
+console.log(idstr);
+if (cart[idstr] !=undefined){
+cart[idstr] = cart[idstr] + 1;
+}
+else
+{
+cart[idstr] = 1;
+}
+console.log(cart);
+localStorage.setItem('cart', JSON.stringify(cart));
+document.getElementById('cart').innerHTML = Object.keys(cart).length;
+});
+$('#popcart').popover();
+document.getElementById("popcart").setAttribute('data-content', '<h5>Cart for your items in my shopping cart</h5>');
+</script>
+{% endblock %}

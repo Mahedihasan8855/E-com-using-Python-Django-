@@ -1,0 +1,351 @@
+{% extends 'shop/basic.html' %}
+
+{% block title%} About Us{% endblock %}
+{% block body %}
+
+
+
+{% load static %}
+
+
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="container z-depth-1 my-5 py-5 px-4 px-lg-0">
+
+  <!-- Section -->
+  <section>
+    
+    <style>
+      .timeline {
+        position: relative;
+        list-style: none;
+        padding: 1rem 0;
+        margin: 0;
+      }
+
+      .timeline::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        margin-left: -1px;
+        background-color: #50a1ff;
+      }
+
+      .timeline-element {
+        position: relative;
+        width: 50%;
+        padding: 1rem 0;
+        padding-right: 2.5rem;
+        text-align: right;
+      }
+
+      .timeline-element::before {
+        content: '';
+        position: absolute;
+        right: -8px;
+        top: 1.35rem;
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 2px solid #50a1ff;
+        background-color: #fff;
+      }
+
+      .timeline-element:nth-child(even)::before {
+        right: auto;
+        left: -8px;
+      }
+
+      .timeline-element:nth-child(even) {
+        margin-left: 50%;
+        padding-left: 2.5rem;
+        padding-right: 0;
+        text-align: left;
+      }
+
+      @media (max-width: 767.98px) {
+        .timeline::before {
+          left: 8px;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .timeline-element {
+          width: 100%;
+          text-align: left;
+          padding-left: 2.5rem;
+          padding-right: 0;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .timeline-element::before {
+          top: 1.25rem;
+          left: 1px;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .timeline-element:nth-child(even) {
+          margin-left: 0rem;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .timeline-element {
+          width: 100%;
+          text-align: left;
+          padding-left: 2.5rem;
+          padding-right: 0;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .timeline-element:nth-child(even)::before {
+          left: 1px;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .timeline-element::before {
+          top: 1.25rem;
+        }
+      }
+    </style>
+
+
+    <h1 class="font-weight-bold text-center mb-4">Our History</h1>
+   
+    <hr class="w-header my-4">
+    <p class="lead text-center text-muted pt-2 mb-5">Mr. Pharmacy founded to help people.</p>
+    
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+
+        <ol class="timeline">
+          <li class="timeline-element">
+            <h5 class="font-weight-bold dark-grey-text mb-3">Launched our website</h5>
+            <p class="grey-text font-small"><time datetime="2017-02-08">01 Nov 2020</time></p>
+            
+            <p class="text-muted">{{setting.description}}</p>
+          </li>
+
+          <li class="timeline-element">
+            <h5 class="font-weight-bold dark-grey-text mb-3">Our Mission</h5>
+            
+            <p><img class="img-fluid z-depth-1-half rounded" src="{{setting.about_icon.url}}" alt="..."></p>
+            <p class="text-muted">Our mission is to improve patients' lives by delivering innovative products and services that drive quality and efficiency in pharmaceutical care. To improve the health and wellness of our communities through engaging experiences that provide our customers with the best products, services and advice to meet their unique needs..</p>
+          </li>
+
+          <li class="timeline-element">
+            <h5 class="font-weight-bold dark-grey-text mb-3">Contact number</h5>
+            
+            <p class="text-muted">{{setting.phone}}</p>
+          </li>
+          <li class="timeline-element">
+            <h5 class="font-weight-bold dark-grey-text mb-3">Email</h5>
+            
+            <p class="text-muted">{{setting.email}}</p>
+          </li>
+
+          
+          <li class="timeline-element">
+            <h5 class="font-weight-bold dark-grey-text mb-3"><a class="nav-link text-dark" href="/shop/contact">Contact Us</a></h5>
+            
+            
+          </li>
+          
+        </ol>
+
+      </div>
+    </div>
+    
+  </section>
+
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+<div class="container pt-5 my-5 z-depth-1">
+  <section class="p-md-3 mx-md-5 text-center text-lg-left">
+    <h2 class="text-center mx-auto font-weight-bold mb-4 pb-2">Our Team</h2>
+    <hr class="w-header my-4">
+    <div class="row d-flex justify-content-center">
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="p-4">
+          <div
+            class="avatar w-100 white d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="{{setting.team1.url}}"
+              class="img-fluid rounded-circle z-depth-1"
+            />
+          </div>
+          <div class="text-center mt-3">
+            <h4 class="font-weight-bold pt-2">Shahriar Fahim</h4>
+            <p class="text-muted">
+              Front-End Developer 
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="p-4">
+          <div
+            class="avatar w-100 white d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="{{setting.team2.url}}"
+              class="img-fluid rounded-circle z-depth-1"
+            />
+          </div>
+          <div class="text-center mt-3">
+            <h4 class="font-weight-bold pt-2">kamruzzaman Kiron</h4>
+            <p class="text-muted">
+              Database Designer and Server Handler              
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="p-4">
+          <div
+            class="avatar w-100 white d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="{{setting.team3.url}}"
+              class="img-fluid rounded-circle z-depth-1"
+            />
+          </div>
+          <div class="text-center mt-3">
+            <h4 class="font-weight-bold pt-2">Abdus Sattar</h4>
+            <p class="text-muted">
+              Javascript and Jeson Programmer
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="p-4">
+          <div
+            class="avatar w-100 white d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="{{setting.team4.url}}"
+              class="img-fluid rounded-circle z-depth-1"
+            />
+          </div>
+          <div class="text-center mt-3">
+            <h4 class="font-weight-bold pt-2">Sakib Ahmed</h4>
+            <p class="text-muted">
+              Algorithm Specialist
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="p-4">
+          <div
+            class="avatar w-100 white d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="{{setting.team5.url}}"
+              class="img-fluid rounded-circle z-depth-1"
+            />
+          </div>
+          <div class="text-center mt-3">
+            <h4 class="font-weight-bold pt-2">Mahedi Hasaan</h4>
+            <p class="text-muted">
+              Back-End Developer
+            </p>
+          </div>
+        </div>
+      </div>
+      
+     
+    </div>
+  </section>
+</div>
+
+
+
+
+
+
+
+<footer class="page-footer font-small cyan darken-3" style="     background-color: #000000!important;">
+ 
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-12 py-5">
+        <div class="mb-5 flex-center">
+
+          <!-- Facebook -->
+          <a class="fb-ic text-light">
+            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic text-light">
+            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic text-light">
+            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic text-light">
+            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic text-light">
+            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          
+          <a class="navbar-brand" href="#!">
+    <img src="{{setting.icon.url}}" height="90" width="300" alt="mdb logo">
+  </a>
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+
+    <!-- Grid row-->
+
+
+  </div>
+  <hr class="w-100 mt-2 " style="background-color: #ffbf00!important;">
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3 text-light">© 2020 Copyright:
+    <a href="" class=" text-muted"> mahedihassan8855@gmail.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+
+
+
+
+
+
+{% endblock %}
